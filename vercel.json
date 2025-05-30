@@ -8,11 +8,5 @@
         "distDir": "vite-project/dist"
       }
     }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/vite-project/$1"
-    }
   ]
 }
