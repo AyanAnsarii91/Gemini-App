@@ -24,6 +24,4 @@ dist-ssr
 *.sw?
 
 .env
-dist/
 node_modules/
-/dist
