@@ -1,0 +1,365 @@
+/* =====================
+   Google Fonts Import
+===================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+
+/* =====================
+   Root Variables
+===================== */
+:root {
+  --clr-primary: #4f46e5;
+  --clr-secondary: #6366f1;
+  --clr-accent: #f59e0b;
+  --clr-bg: #f4f4fa;
+  --clr-bg-glass: rgba(255, 255, 255, 0.75);
+  --clr-fg: #1f2937;
+  --clr-muted: #6b7280;
+  --clr-border: #e5e7eb;
+
+  --font-sans: 'Poppins', sans-serif;
+  --font-heading: 'Playfair Display', serif;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 24px;
+
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+  --transition: all 0.3s ease-in-out;
+}
+
+/* =====================
+   Global Reset
+===================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--clr-fg);
+  background-color: var(--clr-bg);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ==========================
+   Beautiful Vertical Scrollbar
+   ========================== */
+
+body {
+  font-family: var(--font-sans);
+  color: var(--clr-fg);
+  background-color: var(--clr-bg);
+  line-height: 1.6;
+  overflow-x: hidden;
+
+  /* Smooth scrolling */
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar Track */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Scrollbar Background */
+::-webkit-scrollbar-track {
+  background: #1e1e1e;
+  border-radius: 10px;
+}
+
+/* Scrollbar Thumb */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #00ffc3, #007e67);
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  transition: background 0.3s ease;
+}
+
+/* Hover effect on Thumb */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #00ffd5, #00b393);
+}
+
+/* Firefox support */
+body {
+  scrollbar-width: thin;
+  scrollbar-color: #00ffc3 #1e1e1e;
+}
+
+
+/* =====================
+   Navigation
+===================== */
+.navbar {
+  background: #111827;
+  color: white;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--shadow-md);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  color: var(--clr-accent);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.nav-links a:hover {
+  color: var(--clr-accent);
+}
+
+/* =====================
+   Header
+===================== */
+.header {
+  background: linear-gradient(135deg, #c2e9fb, #a1c4fd);
+  text-align: center;
+  padding: 4rem 2rem;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.header h1 {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  color: var(--clr-primary);
+}
+
+.header p {
+  font-size: 1.125rem;
+  color: var(--clr-fg);
+  margin-top: 1rem;
+}
+
+/* =====================
+   Container Utility
+===================== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* =====================
+   Forms
+===================== */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+input[type="text"] {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 500px;
+  border-radius: var(--radius-md);
+  border: 2px solid var(--clr-border);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+input[type="text"]:focus {
+  border-color: var(--clr-primary);
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2);
+}
+
+/* =====================
+   Buttons
+===================== */
+button {
+  padding: 0.75rem 1.75rem;
+  background-color: var(--clr-primary);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+}
+
+button:hover {
+  background-color: var(--clr-secondary);
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Suggested Prompts */
+.prompt-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.prompt-buttons button {
+  background-color: #10b981;
+}
+
+.prompt-buttons button:hover {
+  background-color: #059669;
+}
+
+/* =====================
+   Image Display
+===================== */
+#aiImage {
+  margin-top: 2rem;
+  max-width: 55%;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  display: none;
+  transition: var(--transition);
+  object-fit: cover;
+}
+
+#aiImage.visible {
+  display: block;
+  opacity: 1;
+}
+
+#downloadBtn {
+  display: none;
+  margin-top: 1.5rem;
+  background-color: var(--clr-accent);
+  color: #fff;
+  font-weight: 600;
+}
+
+#downloadBtn:hover {
+  background-color: #d97706;
+}
+
+/* =====================
+   Status Message
+===================== */
+#status {
+  font-size: 1.1rem;
+  color: var(--clr-accent);
+  margin-top: 1rem;
+  animation: pulse 2s infinite;
+}
+
+/* =====================
+   Footer
+===================== */
+.footer {
+  background-color: hsl(155, 100%, 64%);
+  color: lab(100% 0.01 -0.01);
+  padding: 0.6rem 0.5rem;
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 2.5rem;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.socials img {
+  width: 29px;
+  margin: 10px;
+  filter: brightness(1) invert(1);
+  transition: transform 0.3s ease;
+}
+
+.socials img:hover {
+  transform: scale(1.2);
+}
+
+/* =====================
+   Animations
+===================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* =====================
+   Responsive Design
+===================== */
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 2.2rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .prompt-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  button, input[type="text"] {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 1.8rem;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+}

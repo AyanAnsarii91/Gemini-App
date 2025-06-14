@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Generate AI-powered images using Gemini. Enter a prompt and get creative visuals instantly." />
+  <title>Wings AI Image Generator</title>
+
+  <!-- Favicon & Manifest -->
+  <link rel="icon" href="./img/Wings.png" />
+  <link rel="manifest" href="site.webmanifest" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="css/index.css" />
+  <link rel="stylesheet" href="css/components.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <!-- <img src="./img/Wings.png" width="50" alt="Not Found"> -->
+      <span class="logo">WingsGen</span>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#promptSection">Generate</a></li>
+        <li><a href="#suggestedPrompts">Prompts</a></li>
+        <li><a href="#footer">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header role="banner" class="header">
+    <div class="container">
+      <h1 class="fade-in">🧠 Wings AI Image Generator</h1>
+      <p class="slide-up">Enter a description or select a prompt below to generate a stunning AI image.</p>
+    </div>
+  </header>
+
+  <main role="main">
+    <section id="suggestedPrompts" class="container fade-in">
+      <h2>✨ Suggested Prompts</h2>
+      <div class="prompt-buttons">
+        <button onclick="setPrompt('A futuristic city in space at night')">Futuristic City</button>
+        <button onclick="setPrompt('A cute robot baking a cake in a kitchen')">Cute Robot</button>
+        <button onclick="setPrompt('Abstract art inspired by dreams')">Dreamy Art</button>
+        <button onclick="setPrompt('A magical forest with glowing creatures')">Magical Forest</button>
+      </div>
+    </section>
+
+    <section aria-labelledby="promptSection" class="container fade-in">
+      <form onsubmit="event.preventDefault(); generateImage();" aria-label="AI Image Generator Form">
+        <label for="userPrompt">Prompt</label>
+        <input type="text" id="userPrompt" name="userPrompt" placeholder="Enter your prompt here..." required />
+        <button type="submit">Generate Image</button>
+      </form>
+    </section>
+
+    <section id="statusSection" aria-live="polite" class="container">
+      <div id="status"></div>
+    </section>
+
+    <section id="imageSection" class="container fade-in" aria-labelledby="imageLabel">
+      <h2 id="imageLabel" class="visually-hidden">Generated Image</h2>
+      <img id="aiImage" src="" alt="AI Generated Image" style="display:none;" />
+      <button id="downloadBtn" style="display:none; margin-top: 1rem;">Download Image</button>
+
+    </section>
+  </main>
+
+  <footer id="footer" role="contentinfo" class="footer">
+    <div class="footer-container">
+      <p>&copy; 2025 Gemini AI Tools. Made with ❤️ for creators.</p>
+      <div class="socials">
+        <a href="https://github.com/AyanAnsarii91"><img src="img/git.png" alt="GitHub"></a>
+        <a href="https://x.com/ayanansariii"><img src="img/x.png" alt="Twitter"></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- External JS -->
+  <script src="Javascript/index.js" defer></script>
+  <script>
+    function setPrompt(prompt) {
+      document.getElementById("userPrompt").value = prompt;
+      generateImage();
+    }
+  </script>
+</body>
+</html>
+
+   
