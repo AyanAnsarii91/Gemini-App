@@ -3,17 +3,29 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import { GoogleGenAI, Modality } from "@google/genai";
+import path from "path";
+import { fileURLToPath } from "url";
+
+// ESM __dirname setup
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // configure dotenv to load .env variables
 dotenv.config();
 
 // setup Express app
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 // middleware
 app.use(cors());
 app.use(express.json());
+
+// Serve static frontend files
+app.use(express.static(path.join(__dirname, "client")));
+app.get("/*catchall", function (req, res) {
+  res.sendFile(path.join(__dirname, "client", "index.html"));
+});
 
 // initialize Google GenAI
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
